@@ -1,0 +1,21 @@
+@mixin glass-effect {
+  background: $card-background;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: $box-shadow;
+}
+
+@mixin button-gradient($start-color, $end-color) {
+  background: linear-gradient(to right, $start-color, $end-color);
+  transition: all $transition-speed ease;
+
+  &:hover {
+    background: linear-gradient(
+      to right,
+      darken($start-color, 10%),
+      darken($end-color, 10%)
+    );
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
